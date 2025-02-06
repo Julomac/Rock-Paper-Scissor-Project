@@ -1,3 +1,28 @@
-# Project Description
+# 📌 Project Definition
 
-Project Title: 
+## 🎯 Project Name  
+Rock Paper Scissor Game
+
+## 📝 Description  
+This project will be a way of playing rock peper scissor game
+
+## 🌟 Key Features  
+*(List the main things this project will have.)*  
+- selecting a move 
+- the computer selecting a move
+- a scoreboard
+
+## 🎯 Goals & Purpose  
+the goal is to re-create the rock paper scissors project on my own without follwoing a turorial while applying my new knowlege of js (event listener, => functions etc,).
+The purpse is to practice the basic of that I have learn in a course on youtube.
+
+## 🏗️ Scope (What’s Included & What’s Not)  
+this wil only include html css and vanilla js and DOM manipulation.
+
+## 🛠️ Tech Stack  
+*(Which technologies, frameworks, and tools will you use? Example: React, Node.js, Firebase, Unity, etc.)*  
+- visual studio
+- html, CSS, Javascript
+
+## ⏳ Timeline & Milestones  
+No time line or deadline this is just for me.
