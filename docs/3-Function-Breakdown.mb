@@ -6,13 +6,15 @@ This is where I break the features in functions
 1. Playing vs a computer (MVP)
 functions;
 	randomPick(); | assign a random move| input = none | output = A random Pick
-	user1Pick(); | assign the user move | Input = eventlistener | output = user1's Pick
-	user2Pick(); | Assign the Bot a move | randomPick(); | output = user2's Pick
-	gameLogic();| compare picks and determined the winner| input = user1Pick , user2Pick | output = who is the winner
+	user1Pick(); | update the user move | Input = eventlistener | output = user1's Pick
+	user2Pick(); | update the Bot a move | randomPick(); | output = user2's Pick
+	gameLogic();| update the winner and loser| input = user1Pick , user2Pick | output= none
+
+displayUi();| update the UI with with new information| input = user1,user2, scoreboard)
 
 2. keeping score of between games 
 function;
-	updateScoreboard();| update the scoreboard of the winner| input = winner| output = none
+	updateScoreboard();| update the scoreboad| input = winner| output = none
 
 
 3. score being kept on local Storage
