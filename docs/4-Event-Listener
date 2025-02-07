@@ -1,14 +1,36 @@
 * Event Listener
 
-rock button click
+rock button; click
 	trigger: userPick('Rock')
 	Purpose: Player pick rock
 
-paper button click
+paper button; click
 	trigger:userPick('paper')
 	purpose: player pick paper
 
-scicssors button click
+scicssors button; click
 	trigger userPick('scissors')
 	purpose: player pick scissors
+
+
+clearScore button; click
+	trigger: clearScore()
+	purpose: user clear the scoreboard
+
+'r' keyboard; keydown
+	trigger: userPick('rock')
+	purpose: user pick rock
+
+'p' keyboard; keydown
+	trigger: userPick('paper')
+	purpose: user pick paper
+
+'s' keyboard; keydown
+	trigger: userPick('scissors')
+	purpose: user pick scissors
+
+autoplay button; click
+	trigger: autoPlay();
+	purpose: have the two computer play the game
+
 
