@@ -12,11 +12,6 @@ scicssors button; click
 	trigger userPick('scissors')
 	purpose: player pick scissors
 
-
-clearScore button; click
-	trigger: clearScore()
-	purpose: user clear the scoreboard
-
 'r' keyboard; keydown
 	trigger: userPick('rock')
 	purpose: user pick rock
@@ -33,4 +28,6 @@ autoplay button; click
 	trigger: autoPlay();
 	purpose: have the two computer play the game
 
-
+clearScore button; click
+	trigger: clearScore()
+	purpose: user clear the scoreboard
