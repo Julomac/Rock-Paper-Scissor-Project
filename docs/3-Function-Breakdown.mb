@@ -9,13 +9,12 @@ functions;
 	user1Pick(); | update the user move | Input = eventlistener | output = user1's Pick
 	user2Pick(); | update the Bot a move | randomPick(); | output = user2's Pick
 	gameLogic();| update the winner and loser| input = user1Pick , user2Pick | output= none
-
 displayUi();| update the UI with with new information| input = user1,user2, scoreboard)
 
-2. keeping score of between games 
+2. keeping score of between games and clear score
 function;
 	updateScoreboard();| update the scoreboad| input = winner| output = none
-
+	clearScore();| reset the scoreboard | input(ClearButton)|ouput = none
 
 3. score being kept on local Storage
 functions;
