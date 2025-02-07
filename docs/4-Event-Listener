@@ -1,0 +1,14 @@
+* Event Listener
+
+rock button click
+	trigger: userPick('Rock')
+	Purpose: Player pick rock
+
+paper button click
+	trigger:userPick('paper')
+	purpose: player pick paper
+
+scicssors button click
+	trigger userPick('scissors')
+	purpose: player pick scissors
+
