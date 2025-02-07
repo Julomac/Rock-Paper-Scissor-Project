@@ -1,0 +1,27 @@
+* List of Elements
+
+<Body> 
+    <Game Container>
+        - Title
+        - Instructions
+        <Movebuttons>
+            - Rock
+            - Paper
+            - Scissors
+        </Movebuttons>
+        <Result Container>
+            - User 1 Pick
+            - result
+            - user 2 Pick
+        </Result Container>
+        <Scoreboard>
+            - user 1 wins
+            - user 2 wins
+            - tie games
+        </Scoreboard>
+        <Action Button Container>
+            - Reset Score button
+            - Auto Play Button
+        </Action Button Container>
+    <Game-Container>
+</body>
