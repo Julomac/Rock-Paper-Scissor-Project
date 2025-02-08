@@ -1,2 +1,76 @@
 * Pseucode
 
+Game initialization:
+*  displayScore(); Pull the save scoreboard from local storage and display it
+* Display Score board on the screen
+
+
+	randomPick(){
+		create a variable  with random number in it 
+		create a move variable
+		if number is <= 1/3 pick move = rock
+		if number is > 1/3 and < 2/3 move = paper
+		if number is >= 2/3 move = scissors
+		return move;
+	}; 
+
+	user1Pick(listen to for move button click){
+		create move variable
+		if buttonRock is click update user1.move to move
+		if buttonPaper is click update user1.move to move
+		if buttonScissors is click update user1.move to move
+		user2Pick(); this updateuser2 move to a random move to user2 
+		gameLogic(); this update who the winner is
+		updateScoreboard(winner); update the score 
+		saveScore(); this save the score to the localStorage
+		displayUi(); this take the information from user1 user2 and scoreboard and display it on the screen
+	};
+
+	user2Pick(){
+		 save randomPick function to move variable
+		update user2.move to move
+	};
+
+	gameLogic(user1, user2){
+		if user1.move is rock and user2 is scissors or
+		if user1.move is paper and user2 is rock or 
+		if user1.move is scissors and user2 is paper
+			change user1.isWinning to true and change user2.isWinning to false
+		if user2.move is rock and user1 is scissors or
+		if user2.move is paper and user1 is rock or 
+		if user2.move is scissors and user1 is paper
+			change the user1.isWinning to false and user2.isWinning to true
+		else
+			change 
+};
+
+	updateScoreboard(user1,user2){
+		if user1.isWinning is true add one to scoboard.win
+		if user2.i
+	};
+
+	displayUi();| update the UI with with new information| input = user1,user2, scoreboard)
+
+
+
+	clearScore();| reset the scoreboard | input(ClearButton)|ouput = none
+
+
+	saveScore(); | save the score of the game| input = the score| output = none
+	
+displayScore(){
+		get the information for localstorage
+		update the scoreboard
+		displayUi();
+	}; | pull the score from locoal storage| input = none| output = the score
+
+4. Having a computer vs computer game that runs on its own
+function;
+	I don't think this feature requires more functions just has to run other function automatically like on a timer
+
+
+
+5. being able to play to the game using 'p' ,'r', 's' for chosing the move
+functions;
+	I dont think this feature requires more feature just need to run other function base on eventlistener(keydown)
+
