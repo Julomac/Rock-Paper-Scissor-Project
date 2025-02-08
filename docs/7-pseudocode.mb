@@ -53,15 +53,22 @@ Game initialization:
 	displayUi(user1,user2, scoreboard){
 		if user1.isWinning is true display the HTML element for user 1 won and scoreboard
 		if user2.isWinning is true display the HTML element for user 2 won and scoreboard
-		if user1.isWinning and user2.isWinning is false display HTML Element for tir game and scoreboard
+		if user1.isWinning and user2.isWinning is false display HTML Element for tie game and scoreboard
 	};
 	
 
+	clearScore(clearButton){
+		scoreboard.win set to 0
+		scoreboard.lost set to 0
+		scoreboard.tie set to 0
+		saveScoreboard();
+		display();
+	};
 
-	clearScore();| reset the scoreboard | input(ClearButton)|ouput = none
 
-
-	saveScore(); | save the score of the game| input = the score| output = none
+	saveScore(scoreBoard){
+		setLocalStorage(scoreboard)
+	};
 	
 displayScore(){
 		get the information for localstorage
