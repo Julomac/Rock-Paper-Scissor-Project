@@ -77,12 +77,11 @@ displayScore(){
 	}; | pull the score from locoal storage| input = none| output = the score
 
 4. Having a computer vs computer game that runs on its own
-function;
-	I don't think this feature requires more functions just has to run other function automatically like on a timer
+	I have to set a interval and make user1 input run randomPick();
+	and so all the function in the userPick1
 
 
 
 5. being able to play to the game using 'p' ,'r', 's' for chosing the move
-functions;
-	I dont think this feature requires more feature just need to run other function base on eventlistener(keydown)
+	I need to have userpicick() => eventlistener listen for keydown p,s,r and update user pick to rock paper and scissors
 
