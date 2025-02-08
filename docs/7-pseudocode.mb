@@ -41,16 +41,21 @@ Game initialization:
 		if user2.move is scissors and user1 is paper
 			change the user1.isWinning to false and user2.isWinning to true
 		else
-			change 
+			change user1.isWinning and user2.isWinning to false
 };
 
 	updateScoreboard(user1,user2){
-		if user1.isWinning is true add one to scoboard.win
-		if user2.i
+		if user1.isWinning is true add one to scoreboard.win
+		if user2.isWinning is ture add one to scoreboard.lost
+		else add one to scoreboard.tie
 	};
 
-	displayUi();| update the UI with with new information| input = user1,user2, scoreboard)
-
+	displayUi(user1,user2, scoreboard){
+		if user1.isWinning is true display the HTML element for user 1 won and scoreboard
+		if user2.isWinning is true display the HTML element for user 2 won and scoreboard
+		if user1.isWinning and user2.isWinning is false display HTML Element for tir game and scoreboard
+	};
+	
 
 
 	clearScore();| reset the scoreboard | input(ClearButton)|ouput = none
