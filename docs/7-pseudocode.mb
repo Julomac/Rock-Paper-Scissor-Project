@@ -14,7 +14,7 @@ Game initialization:
 		return move;
 	}; 
 
-	user1Pick(listen to for move button click){
+	user1Pick(listen for user event){
 		create move variable
 		if buttonRock is click update user1.move to move
 		if buttonPaper is click update user1.move to move
@@ -26,7 +26,7 @@ Game initialization:
 		displayUi(user1, user2, scoreboard); this take the information from user1 user2 and scoreboard and display it on the screen
 	};
 
-	user2Pick(){
+	user2Pick(user2){
 		 save randomPick function to move variable
 		update user2.move to move
 	};
@@ -42,6 +42,21 @@ Game initialization:
 			change the user1.isWinning to false and user2.isWinning to true
 		else
 			change user1.isWinning and user2.isWinning to false
+};
+
+//revised gameLogic
+gameLogic(user1, user2){
+    IF user1.move == user2.move THEN
+        user1.isWinning = false
+        user2.isWinning = false
+    ELSE IF user1.move is rock AND user2.move is scissors OR
+            user1.move is paper AND user2.move is rock OR 
+            user1.move is scissors AND user2.move is paper THEN
+        user1.isWinning = true
+        user2.isWinning = false
+    ELSE
+        user1.isWinning = false
+        user2.isWinning = true
 };
 
 	updateScoreboard(user1,user2){
