@@ -20,10 +20,10 @@ Game initialization:
 		if buttonPaper is click update user1.move to move
 		if buttonScissors is click update user1.move to move
 		user2Pick(); this updateuser2 move to a random move to user2 
-		gameLogic(); this update who the winner is
-		updateScoreboard(winner); update the score 
-		saveScore(); this save the score to the localStorage
-		displayUi(); this take the information from user1 user2 and scoreboard and display it on the screen
+		gameLogic(user1, user2); this update who the winner is
+		updateScoreboard(user1, user2); update the score 
+		saveScore(scoreboard); this save the score to the localStorage
+		displayUi(user1, user2, scoreboard); this take the information from user1 user2 and scoreboard and display it on the screen
 	};
 
 	user2Pick(){
@@ -32,13 +32,13 @@ Game initialization:
 	};
 
 	gameLogic(user1, user2){
-		if user1.move is rock and user2 is scissors or
-		if user1.move is paper and user2 is rock or 
-		if user1.move is scissors and user2 is paper
+		if user1.move is rock and user2.move is scissors or
+		if user1.move is paper and user2.move is rock or 
+		if user1.move is scissors and user2.move is paper
 			change user1.isWinning to true and change user2.isWinning to false
-		if user2.move is rock and user1 is scissors or
-		if user2.move is paper and user1 is rock or 
-		if user2.move is scissors and user1 is paper
+		if user2.move is rock and user1.move is scissors or
+		if user2.move is paper and user1.move is rock or 
+		if user2.move is scissors and user1.move is paper
 			change the user1.isWinning to false and user2.isWinning to true
 		else
 			change user1.isWinning and user2.isWinning to false
