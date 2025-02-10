@@ -33,7 +33,7 @@ addEventListener 'keydown', (event)
 		return move;
 	}; 
 
-	user1Pick(user1, move){
+	user1Pick(user1, user2, move){
 		user1.move = move
 		user2Pick(); this updateuser2 move to a random move to user2 
 		gameLogic(user1, user2); this update who the winner is
