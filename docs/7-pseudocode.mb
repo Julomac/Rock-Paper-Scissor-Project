@@ -74,6 +74,24 @@ gameLogic(user1, user2){
         user1.isWinning = false
         user2.isWinning = true
 };
+function gameLogic2(user1, user2)
+  if (user1.move === user2.move)
+    set user1.hasWon = false;
+    set user2.hasWon = false;
+  
+	create an object with the win winCondition of user 1
+  winCondition = {
+    rock: 'scissors',
+    paper: 'rock',
+    scissors: 'paper'
+  }
+	
+	set user1.hasmove to boolean of if user1 move key and value exist in the winCondition
+  user1.hasWon = winCondition[user1.move] = user2.move;
+
+	set user.hasmove to the oposite of user1.hasmove
+  user2.hasWon = !user1.hasWon; 
+
 
 	updateScoreboard(user1,user2){
 		if user1.isWinning is true add one to scoreboard.win
