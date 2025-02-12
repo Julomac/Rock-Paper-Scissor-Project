@@ -131,15 +131,15 @@ function displayUi(user1,user2, scoreboard){
       `<p>Chose a move to Play the game or click Auto Play</p>`;
   }else if (user1.hasWon){
     resultHTML.innerHTML = 
-      `<p>You Picked <img src="/images/${user1.move}.png"> and the bot pick <img src="/images/${user2.move}.png"></p>
+      `<p>You Picked <img src="images/${user1.move}.png"> and the bot pick <img src="images/${user2.move}.png"></p>
       <p>You Won!</p>`;
   }else if (user2.hasWon){
     resultHTML.innerHTML = 
-      `<p>You Picked <img src="/images/${user1.move}.png"> and the bot pick <img src="/images/${user2.move}.png"></p>
+      `<p>You Picked <img src="images/${user1.move}.png"> and the bot pick <img src="images/${user2.move}.png"></p>
       <p>You Lost!</p>`;
   }else{
     resultHTML.innerHTML = 
-      `<p>You Picked <img src="/images/${user1.move}.png"> and the bot pick <img src="/images/${user2.move}.png"></p>
+      `<p>You Picked <img src="images/${user1.move}.png"> and the bot pick <img src="images/${user2.move}.png"></p>
       <p>It's a tie!</p>`;
     }
       scoreboardHTML.innerHTML = 
