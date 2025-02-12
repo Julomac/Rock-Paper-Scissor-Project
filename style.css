@@ -1,0 +1,108 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #363636;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;  /* Full screen height */
+  margin: 0;      /* Removes default margin */
+}
+.gameContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Center content vertically */
+  min-width: 500px;
+  height: 90vh;
+  padding: 10px;  
+  margin: 10px;  /* Adds spacing */
+}
+
+h1{
+  width: 100%;
+  text-align: center;
+  font-size: 4vw;
+  margin: none;
+  padding: none;
+}
+
+.instructions{
+  
+  text-align: center;
+  font-size: 3.5vw;
+  margin-top: none;
+}
+
+.moveButtons{
+  
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+  width: 100%;
+  margin: 0;
+}
+
+
+.moveButtons button{
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  width: 25vw; /* Each button takes 25% of the screen width */
+  max-width: 100px; /* Prevents them from getting too big */
+  aspect-ratio: 1/1; /* Keeps them square */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.moveButtons img {
+  width: 80%;  /* Image scales within button */
+  height: auto; /* Maintains aspect ratio */
+}
+
+
+.resultContainer{
+  font-size: 2vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.resultContainer p{
+  text-align: center;
+}
+
+.resultContainer img{
+  width: 5%;
+  
+}
+
+.scoreboard{
+  font-size: 2vw;
+}
+
+
+.ActionButtonContainer{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+
+.ActionButtonContainer button{
+  border: none;
+  font-size: 3.5vw;
+  border-radius: 7px;
+  cursor: pointer;
+  padding: 15px;
+  color: white;
+  margin: 10px;
+}
+.greeButton{
+ background-color: #00bf63;
+}
+.redButton{
+  background-color: #ff5757;
+}

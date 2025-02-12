@@ -125,34 +125,25 @@ function updateScoreboard(user1, user2, scoreboard){
 
 function displayUi(user1,user2, scoreboard){
   const resultHTML = document.querySelector('.resultContainer')
+  const scoreboardHTML = document.querySelector('.scoreboard')
   if (user1.move === '' && user2.move === ''){
     resultHTML.innerHTML = 
-      `
-      <p>Chose a move to Play the game or click Auto Play</p>
-      <p>Wins: ${scoreboard.wins} Loses:${scoreboard.losses} Ties: ${scoreboard.ties}</p>
-      `
+      `<p>Chose a move to Play the game or click Auto Play</p>`;
   }else if (user1.hasWon){
     resultHTML.innerHTML = 
-      `
-      <p>You have Picked ${user1.move} and the bot pick ${user2.move}</p>
-      <p>You Won!</p>
-      <p>Wins: ${scoreboard.wins} Loses:${scoreboard.losses} Ties: ${scoreboard.ties}</p>
-      `
+      `<p>You Picked <img src="/images/${user1.move}.png"> and the bot pick <img src="/images/${user2.move}.png"></p>
+      <p>You Won!</p>`;
   }else if (user2.hasWon){
     resultHTML.innerHTML = 
-      `
-      <p>You have Picked ${user1.move} and the bot pick ${user2.move}</p>
-      <p>You Lost!</p>
-      <p>Wins: ${scoreboard.wins} Loses:${scoreboard.losses} Ties: ${scoreboard.ties}</p>
-      `
+      `<p>You Picked <img src="/images/${user1.move}.png"> and the bot pick <img src="/images/${user2.move}.png"></p>
+      <p>You Lost!</p>`;
   }else{
     resultHTML.innerHTML = 
-      `
-      <p>You have Picked ${user1.move} and the bot pick ${user2.move}</p>
-      <p>It's a tie!</p>
-      <p>Wins: ${scoreboard.wins} Loses:${scoreboard.losses} Ties: ${scoreboard.ties}</p>
-      `
-      }
+      `<p>You Picked <img src="/images/${user1.move}.png"> and the bot pick <img src="/images/${user2.move}.png"></p>
+      <p>It's a tie!</p>`;
+    }
+      scoreboardHTML.innerHTML = 
+      `<p>Wins: ${scoreboard.wins} Loses:${scoreboard.losses} Ties: ${scoreboard.ties}</p>`;
 };
 
 function resetScore(scoreboard, user1, user2){
