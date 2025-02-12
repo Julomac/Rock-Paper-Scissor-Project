@@ -9,46 +9,51 @@ const user2 = {
   move: '',
   hasWon: false
 };
-const scoreboard = {
-  win: 0,
-  lost: 0,
-  tie: 0 
+const savedScore = localStorage.getItem('score');
+const scoreboard =  savedScore ? JSON.parse(savedScore) : {
+  wins: 0,
+  losses: 0,
+  ties: 0 
 };
-let intervalID = '';
+
+
 
 
 
 //Event Listener Section
 document.addEventListener('click', (event) =>{
   if(event.target.classList.contains('rock')){
-    console.log('Rock');
+    user1Pick(user1, user2, 'rock', scoreboard)
   }
   if(event.target.classList.contains('paper')){
-    console.log('paper');
+    user1Pick(user1, user2, 'paper', scoreboard)
   }
   if(event.target.classList.contains('scissors')){
-    console.log('scissors');
+    user1Pick(user1, user2, 'scissors', scoreboard)
   }
   if(event.target.classList.contains('resetScore')){
-    console.log('reset score');
+    resetScore(scoreboard, user1, user2);
+    
   }
   if(event.target.classList.contains('autoPlay')){
-    console.log('Auto Play');
+    autoPlay(user1, user2, scoreboard);
   }
 })
 document.addEventListener('keydown', (event)=>{
 
   if (event.key === 'r'){
-    console.log('r: rock')
+    user1Pick(user1, user2, 'rock', scoreboard)
   }
   if (event.key === 'p'){
-    console.log('p: paper')
+    user1Pick(user1, user2, 'paper', scoreboard)
   }
   if (event.key === 's'){
-    randomPick();
+    user1Pick(user1, user2, 'scissors', scoreboard)
   }
 });
 //End of event Listener
+
+displayUi(user1, user2, scoreboard);
 
 // Choses a random move
 function randomPick(){
@@ -67,14 +72,13 @@ function user1Pick(user1, user2, move, scoreboard){
 
   user2Pick(user2);
   gameLogic2(user1, user2);
-  //updateScoreboard(user1, user2, scoreboard);
-  //saveScore(scoreboard);
-  //displayUi(user1, user2, scoreboard);
+  updateScoreboard(user1, user2, scoreboard);
+  saveScore(scoreboard);
+  displayUi(user1, user2, scoreboard);
 }
 function user2Pick(user2){
   const move = randomPick();
-  console.log(move)
-  user2.move = move
+  user2.move = move;
 }
 
 /*
@@ -106,6 +110,89 @@ function gameLogic2(user1, user2){
     paper: 'rock',
     scissors: 'paper'
   }
-  user1.hasWon = winCondition[user1.move] = user2.move;
+  user1.hasWon = (winCondition[user1.move] === user2.move);
   user2.hasWon = !user1.hasWon; 
+};
+function updateScoreboard(user1, user2, scoreboard){
+  if(user1.hasWon){
+    scoreboard.wins += 1;
+  }else if(user2.hasWon){
+    scoreboard.losses += 1 ;
+  }else{
+    scoreboard.ties += 1;
+  }
+};
+
+function displayUi(user1,user2, scoreboard){
+  const resultHTML = document.querySelector('.resultContainer')
+  if (user1.move === '' && user2.move === ''){
+    resultHTML.innerHTML = 
+      `
+      <p>Chose a move to Play the game or click Auto Play</p>
+      <p>Wins: ${scoreboard.wins} Loses:${scoreboard.losses} Ties: ${scoreboard.ties}</p>
+      `
+  }else if (user1.hasWon){
+    resultHTML.innerHTML = 
+      `
+      <p>You have Picked ${user1.move} and the bot pick ${user2.move}</p>
+      <p>You Won!</p>
+      <p>Wins: ${scoreboard.wins} Loses:${scoreboard.losses} Ties: ${scoreboard.ties}</p>
+      `
+  }else if (user2.hasWon){
+    resultHTML.innerHTML = 
+      `
+      <p>You have Picked ${user1.move} and the bot pick ${user2.move}</p>
+      <p>You Lost!</p>
+      <p>Wins: ${scoreboard.wins} Loses:${scoreboard.losses} Ties: ${scoreboard.ties}</p>
+      `
+  }else{
+    resultHTML.innerHTML = 
+      `
+      <p>You have Picked ${user1.move} and the bot pick ${user2.move}</p>
+      <p>It's a tie!</p>
+      <p>Wins: ${scoreboard.wins} Loses:${scoreboard.losses} Ties: ${scoreboard.ties}</p>
+      `
+      }
+};
+
+function resetScore(scoreboard, user1, user2){
+  scoreboard.wins = 0;
+  scoreboard.losses = 0;
+  scoreboard.ties = 0;
+  
+  user1.move = '';
+  user2.move = '';
+
+  
+
+  localStorage.removeItem('score');
+
+  clearInterval(intervalID);
+  isRunning = false
+  
+  displayUi(user1, user2, scoreboard);
+
+}
+
+function saveScore(scoreboard){
+  localStorage.setItem('score', JSON.stringify(scoreboard))
+}
+
+let isRunning = false; 
+let intervalID = '';
+
+function autoPlay(user1, user2, scoreboard){
+    isRunning = !isRunning;
+    if(isRunning){
+      intervalID = setInterval(()=>{
+        user1.move = randomPick();
+        user2Pick(user2);
+        gameLogic2(user1, user2);
+        updateScoreboard(user1, user2, scoreboard);
+        saveScore(scoreboard);
+        displayUi(user1, user2, scoreboard);
+      },500)
+    }else{
+      clearInterval(intervalID);
+    }
 };
